@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    build: ./app
+    links:
+      - db
+    ports:
+      - "3000:3000"
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: password
+      MYSQL_INSTANCE_NAME: db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8084:8084"
+    volumes:
+      - ./database:/var/lib/mysql
