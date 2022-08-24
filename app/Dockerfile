@@ -2,10 +2,10 @@ FROM python:2.7.18
 
 EXPOSE 3000
 
-WORKDIR /2d54d89f7c20f90a487e833ac6695aa9
+WORKDIR /app
 
-COPY requirements.txt /2d54d89f7c20f90a487e833ac6695aa9
+COPY requirements.txt /app
 RUN pip install -r requirements.txt
 
-COPY application.py /2d54d89f7c20f90a487e833ac6695aa9
+COPY application.py /app
 CMD python application.py
